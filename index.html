@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d18">
+  <meta name="description" content="وب‌سایت رسمی سرور ماینکرفت؛ اخبار، اطلاعات، قوانین و راهنمای ورود.">
+  <title>سرور ماینکرفت | اخبار و اطلاعات</title>
+  <style>
+    :root {
+      --bg: #090d18; --panel: #111827; --panel2: #151f31; --line: #263449;
+      --text: #edf4ff; --muted: #9cabc2; --green: #54f2a2; --blue: #62a9ff;
+      --purple: #a78bfa; --radius: 20px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background:
+        radial-gradient(ellipse at 85% 0%, rgba(49, 103, 190, .18), transparent 38%),
+        radial-gradient(ellipse at 10% 30%, rgba(87, 54, 163, .13), transparent 32%), var(--bg);
+      color: var(--text); font-family: Tahoma, "Segoe UI", sans-serif; line-height: 1.85;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1120px, calc(100% - 32px)); margin: auto; }
+    header { position: sticky; top: 0; z-index: 10; background: rgba(9,13,24,.84); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(120,150,190,.14); }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:20px; min-height:76px; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:900; letter-spacing:-.3px; }
+    .logo { display:grid; place-items:center; width:44px; height:44px; border-radius:14px; background:linear-gradient(135deg,var(--green),var(--blue)); color:#07111a; font-size:23px; box-shadow:0 8px 30px #54f2a226; }
+    .brand small { display:block; color:var(--muted); font-weight:400; font-size:11px; margin-top:-5px; }
+    .navlinks { display:flex; gap:22px; color:var(--muted); font-size:13px; }
+    .navlinks a:hover { color:var(--green); }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; border:1px solid var(--line); border-radius:12px; padding:11px 16px; color:var(--text); background:#ffffff08; cursor:pointer; font:inherit; font-size:13px; transition:.2s; }
+    .btn:hover { transform:translateY(-2px); border-color:#54f2a277; }
+    .btn.primary { color:#07111a; background:var(--green); border-color:var(--green); font-weight:900; }
+    .hero { padding:72px 0 42px; display:grid; grid-template-columns:1.2fr .8fr; align-items:center; gap:40px; }
+    .eyebrow { display:inline-flex; gap:8px; align-items:center; border:1px solid #54f2a244; color:var(--green); border-radius:99px; padding:5px 12px; font-size:12px; background:#54f2a20c; }
+    .dot { width:8px; height:8px; border-radius:50%; background:var(--green); box-shadow:0 0 12px var(--green); }
+    h1 { font-size:clamp(34px,5vw,58px); line-height:1.35; margin:18px 0 12px; letter-spacing:-1.5px; }
+    h1 span { color:var(--green); }
+    .hero p { color:var(--muted); max-width:620px; margin:0 0 24px; }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; }
+    .server-card { border:1px solid #354760; background:linear-gradient(145deg,#172337dd,#0d1422ee); border-radius:26px; padding:24px; box-shadow:0 25px 70px #0005; position:relative; overflow:hidden; }
+    .server-card:before { content:""; position:absolute; width:180px;height:180px;border-radius:50%;background:#54f2a210;filter:blur(5px);left:-70px;top:-70px; }
+    .server-top { display:flex; align-items:center; gap:14px; position:relative; }
+    .server-icon { width:64px;height:64px;border-radius:17px;display:grid;place-items:center;background:linear-gradient(135deg,#263c58,#172438);font-size:30px;border:1px solid #435b77; }
+    .server-top h2 { font-size:19px; margin:0; }
+    .server-top p { font-size:12px; margin:2px 0 0; }
+    .status { margin-right:auto; font-size:11px; color:var(--green); border:1px solid #54f2a244; background:#54f2a20d; padding:4px 9px; border-radius:99px; white-space:nowrap; }
+    .ipbox { margin-top:24px; padding:14px; background:#070b13a8; border:1px solid var(--line); border-radius:14px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .ipbox small { color:var(--muted); display:block; font-size:11px; }
+    .ipbox strong { font-size:15px; direction:ltr; display:block; text-align:right; overflow-wrap:anywhere; }
+    .copy { flex-shrink:0; background:var(--green); color:#07111a; border:0; border-radius:10px; padding:9px 12px; font-weight:900; cursor:pointer; }
+    .mini-stats { display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px; }
+    .mini-stat { background:#ffffff06;border:1px solid #ffffff0b;border-radius:13px;padding:12px;text-align:center; }
+    .mini-stat strong { display:block;font-size:17px; }
+    .mini-stat span { color:var(--muted);font-size:11px; }
+    section { padding:36px 0; }
+    .section-head { display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:20px; }
+    .section-head h2 { margin:0;font-size:25px; }
+    .section-head p { margin:4px 0 0;color:var(--muted);font-size:13px; }
+    .grid { display:grid;grid-template-columns:repeat(3,1fr);gap:16px; }
+    .card { background:linear-gradient(145deg,#121b2a,#0e1522);border:1px solid var(--line);border-radius:var(--radius);padding:20px;min-width:0; }
+    .news-art { height:120px;border-radius:14px;margin-bottom:16px;display:grid;place-items:center;font-size:42px;background:radial-gradient(circle at 30% 20%,#54f2a22b,transparent 45%),linear-gradient(135deg,#1b3041,#17162e);border:1px solid #ffffff0a; }
+    .tag { display:inline-block;color:var(--blue);background:#62a9ff12;border:1px solid #62a9ff30;border-radius:7px;padding:2px 8px;font-size:10px; }
+    .card h3 { margin:10px 0 6px;font-size:17px; }
+    .card p { color:var(--muted);font-size:13px;margin:0; }
+    .date { display:block;color:#71829a;font-size:11px;margin-top:12px; }
+    .info-grid { display:grid;grid-template-columns:1fr 1fr;gap:16px; }
+    .info-row { display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #ffffff0c;font-size:13px; }
+    .info-row:last-child { border-bottom:0; }
+    .info-row span:first-child { color:var(--muted); }
+    .info-row strong { text-align:left; overflow-wrap:anywhere; }
+    .rules { display:grid;grid-template-columns:repeat(3,1fr);gap:12px; }
+    .rule { padding:17px;border:1px solid var(--line);border-radius:16px;background:#ffffff04; }
+    .rule b { display:block;margin-bottom:5px; }
+    .rule p { margin:0;color:var(--muted);font-size:12px; }
+    .cta { display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px;border-radius:22px;border:1px solid #54f2a233;background:linear-gradient(110deg,#54f2a211,#62a9ff0b); }
+    .cta h2 { margin:0 0 4px;font-size:22px; }
+    .cta p { margin:0;color:var(--muted);font-size:13px; }
+    footer { margin-top:30px;border-top:1px solid #ffffff12;padding:26px 0 36px;color:var(--muted);font-size:12px; }
+    .footer-inner { display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap; }
+    .notice { color:#ffd58a;font-size:11px;margin-top:12px; }
+    @media(max-width:800px) { .hero{grid-template-columns:1fr;padding-top:48px;gap:26px}.grid{grid-template-columns:1fr 1fr}.navlinks{display:none}.info-grid{grid-template-columns:1fr}.rules{grid-template-columns:1fr 1fr} }
+    @media(max-width:520px) { .grid{grid-template-columns:1fr}.rules{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.cta{align-items:start;flex-direction:column}.server-top{flex-wrap:wrap}.status{margin-right:0}.mini-stat strong{font-size:15px} }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home"><span class="logo">M</span><span><span id="brandName">HOYLOTT</span><small>وب‌سایت رسمی سرور ماینکرفت</small></span></a>
+    <nav class="navlinks"><a href="#news">اخبار</a><a href="#about">اطلاعات سرور</a><a href="#rules">قوانین</a></nav>
+    <a class="btn primary" href="#join">ورود به سرور ↗</a>
+  </div>
+</header>
+
+<main class="wrap" id="home">
+  <section class="hero">
+    <div>
+      <span class="eyebrow"><span class="dot"></span> دنیای ماجراجویی منتظر توست</span>
+      <h1>بازی کن؛ بساز؛<br><span>افسانه شو.</span></h1>
+      <p>به وب‌سایت رسمی سرور ماینکرفت ما خوش آمدی! آخرین خبرها، تغییرات، رویدادها و اطلاعات موردنیاز برای ورود به سرور را از همین‌جا دنبال کن.</p>
+      <div class="actions"><a class="btn primary" href="#join">🎮 راهنمای ورود</a><a class="btn" href="#news">📰 آخرین اخبار</a></div>
+    </div>
+    <div class="server-card" id="join">
+      <div class="server-top">
+        <div class="server-icon">⛏️</div>
+        <div><h2 id="serverName">HOYLOTT Server</h2><p>Java Edition · خوش اومدی!</p></div>
+        <span class="status">● اطلاعات سرور</span>
+      </div>
+      <div class="ipbox"><div><small>آدرس اتصال (IP)</small><strong id="serverIP">hoyloot.de5.net</strong></div><button class="copy" onclick="copyIP()">کپی IP</button></div>
+      <div class="mini-stats">
+        <div class="mini-stat"><strong id="version">26.2</strong><span>نسخه بازی</span></div>
+        <div class="mini-stat"><strong id="gamemode">Survival</strong><span>حالت بازی</span></div>
+        <div class="mini-stat"><strong id="players">—</strong><span>بازیکنان آنلاین</span></div>
+      </div>
+      <p class="notice">تعداد بازیکنان هنوز به‌صورت زنده دریافت نمی‌شود؛ برای نمایش آنلاین واقعی باید API وضعیت سرور اضافه شود.</p>
+    </div>
+  </section>
+
+  <!-- ویرایش خبرها: عنوان، متن و تاریخ هر article را در این بخش تغییر بده. -->
+  <section id="news">
+    <div class="section-head"><div><h2>📢 آخرین اخبار سرور</h2><p>خبرها و رویدادهای تازه را اینجا منتشر کن.</p></div><span class="tag">NEWS & UPDATES</span></div>
+    <div class="grid">
+      <article class="card"><div class="news-art">🚀</div><span class="tag">اطلاعیه</span><h3>به‌زودی؛ شروع یک ماجراجویی تازه!</h3><p>اینجا متن خبر افتتاح سرور، زمان شروع یا تغییرات مهم را بنویس.</p><span class="date">۱۴۰۵/۰۷/۲۲ · مدیریت سرور</span></article>
+      <article class="card"><div class="news-art">🛡️</div><span class="tag">بروزرسانی</span><h3>تغییرات و امکانات جدید</h3><p>آپدیت‌ها، امکانات اضافه‌شده، رفع باگ‌ها و تغییرات قوانین را اینجا اعلام کن.</p><span class="date">تاریخ انتشار را وارد کن</span></article>
+      <article class="card"><div class="news-art">🏆</div><span class="tag">رویداد</span><h3>رویداد بعدی سرور</h3><p>زمان رویداد، جایزه‌ها، شرایط شرکت و نحوه ثبت‌نام را اینجا قرار بده.</p><span class="date">زمان رویداد را وارد کن</span></article>
+    </div>
+  </section>
+
+  <!-- ویرایش اطلاعات سرور: مشخصات اصلی از تنظیمات SERVER در انتهای فایل می‌آیند. -->
+  <section id="about">
+    <div class="section-head"><div><h2>ℹ️ اطلاعات سرور</h2><p>اطلاعات اصلی سرور برای بازیکنان.</p></div></div>
+    <div class="info-grid">
+      <div class="card">
+        <div class="info-row"><span>نام سرور</span><strong id="infoName">HOYLOTT Server</strong></div>
+        <div class="info-row"><span>نسخه</span><strong id="infoVersion">Minecraft Java 26.2</strong></div>
+        <div class="info-row"><span>نوع سرور</span><strong id="infoType">Survival</strong></div>
+        <div class="info-row"><span>آدرس اتصال</span><strong id="infoIP" dir="ltr">hoyloot.de5.net</strong></div>
+        <div class="info-row"><span>زبان جامعه</span><strong>فارسی 🇮🇷</strong></div>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0">🌟 درباره سرور</h3>
+        <p>این بخش را با معرفی سرورت کامل کن؛ مثلاً ویژگی‌های بقا، اقتصاد، رنک‌ها، جنگ‌ها، مینی‌گیم‌ها، قوانین ویژه یا هر چیزی که سرورت را خاص می‌کند.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px"><span class="tag">جامعه فارسی</span><span class="tag">ماجراجویی</span><span class="tag">رویدادها</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="rules">
+    <div class="section-head"><div><h2>📜 قوانین مهم</h2><p>قوانین کامل را می‌توانی در این بخش یا یک صفحه جدا قرار بدهی.</p></div></div>
+    <div class="rules">
+      <div class="rule"><b>🤝 احترام به بازیکنان</b><p>توهین، آزار و ایجاد مزاحمت برای دیگران ممنوع است.</p></div>
+      <div class="rule"><b>🚫 بدون تقلب</b><p>از چیت‌ها، هک‌ها و سوءاستفاده از باگ‌ها استفاده نکن.</p></div>
+      <div class="rule"><b>🛡️ رعایت قوانین</b><p>دستورهای مدیریت و قوانین اعلام‌شده سرور را رعایت کن.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="cta">
+      <div><h2>آماده‌ای وارد بازی بشی؟</h2><p>آدرس سرور را کپی کن و از بخش Multiplayer وارد شو.</p></div>
+      <button class="btn primary" onclick="copyIP()">کپی آدرس سرور ⧉</button>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap footer-inner"><span>© <span id="year"></span> <span id="footerName">HOYLOTT</span> · تمامی حقوق محفوظ است.</span><span>ساخته‌شده برای جامعه ماینکرفت فارسی 💚</span></div></footer>
+<script>
+  // برای شخصی‌سازی، مقادیر زیر را عوض کن.
+  const SERVER = {
+    brand: "HOYLOTT",
+    name: "HOYLOTT Server",
+    ip: "hoyloot.de5.net",
+    version: "26.2",
+    type: "Survival",
+    players: "—"
+  };
+  document.title = SERVER.brand + " | اخبار و اطلاعات سرور";
+  document.getElementById("brandName").textContent = SERVER.brand;
+  document.getElementById("serverName").textContent = SERVER.name;
+  document.getElementById("infoName").textContent = SERVER.name;
+  document.getElementById("footerName").textContent = SERVER.brand;
+  document.getElementById("serverIP").textContent = SERVER.ip;
+  document.getElementById("infoIP").textContent = SERVER.ip;
+  document.getElementById("version").textContent = SERVER.version;
+  document.getElementById("infoVersion").textContent = "Minecraft Java " + SERVER.version;
+  document.getElementById("gamemode").textContent = SERVER.type;
+  document.getElementById("infoType").textContent = SERVER.type;
+  document.getElementById("players").textContent = SERVER.players;
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  async function copyIP() {
+    const ip = SERVER.ip;
+    if (!ip || ip === "YOUR-SERVER-IP") {
+      alert("اول hoyloot.de5.net را در کد سایت با آدرس واقعی سرورت عوض کن.");
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(ip);
+      alert("آدرس سرور کپی شد: " + ip);
+    } catch (e) {
+      prompt("آدرس سرور را کپی کن:", ip);
+    }
+  }
+</script>
+<!--
+ویرایش سریع:
+1) برای نام/IP/نسخه/حالت بازی، مقادیر داخل const SERVER در انتهای فایل را تغییر بده.
+2) برای خبرها، عنوان‌ها و متن‌های سه کارت داخل section id="news" را ویرایش کن؛ برای خبر جدید یک article class="card" کپی کن.
+3) این سایت HTML ایستا است؛ اخبار از داخل مرورگر پنل مدیریت ندارند و باید فایل را ویرایش و دوباره آپلود کنی.
+-->
+</body>
+</html>
